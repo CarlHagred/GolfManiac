@@ -18,39 +18,59 @@ public class Shoot : MonoBehaviour
     Vector3 startPoint;
     Vector3 endPoint;
 
+    Vector3 lastPosition;
+    Transform myTransform;
+    bool isMoving;
+
     private void Start()
     {
         cam = Camera.main;
         traj = GetComponent<Trajector>();
+
+        myTransform = transform;
+        lastPosition = myTransform.position;
+        isMoving = false;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
-            startPoint.z = 15;
-            Debug.Log(startPoint);
-        }
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 currentPoint = cam.ScreenToWorldPoint(Input.mousePosition);
-            currentPoint.z = 15;
-            traj.RenderLine(startPoint, currentPoint);
 
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
-            endPoint.z = 15;
+        if (myTransform.position != lastPosition)
+            isMoving = true;
+        else
+            isMoving = false;
 
-            force = new Vector2(Mathf.Clamp(startPoint.x - endPoint.x, minPower.x, maxPower.x), Mathf.Clamp(startPoint.y - endPoint.y, minPower.y, maxPower.y));
-            rb.AddForce(force * power, ForceMode2D.Impulse);
-            traj.EndLine();
-            counter += 1;
-            Debug.Log(counter);
+        lastPosition = myTransform.position;
+
+        if (!isMoving)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+                startPoint.z = 15;
+                Debug.Log(startPoint);
+            }
+            if (Input.GetMouseButton(0))
+            {
+                Vector3 currentPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+                currentPoint.z = 15;
+                traj.RenderLine(startPoint, currentPoint);
+
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+                endPoint.z = 15;
+
+
+
+                force = new Vector2(Mathf.Clamp(startPoint.x - endPoint.x, minPower.x, maxPower.x), Mathf.Clamp(startPoint.y - endPoint.y, minPower.y, maxPower.y));
+                rb.AddForce(force * power, ForceMode2D.Impulse);
+                //Camera.main.gameObject.transform.Translate(startPoint.x - endPoint.x, 1, 1);
+                traj.EndLine();
+                counter += 1;
+                Debug.Log(counter);
+            }
         }
     }
-
-
 }
