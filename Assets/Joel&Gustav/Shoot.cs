@@ -34,6 +34,12 @@ public class Shoot : MonoBehaviour
 
     private void Update()
     {
+        if (rb.position.y < -7f)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+            counter += 2;
+        }
+    
 
         if (myTransform.position != lastPosition)
             isMoving = true;
@@ -73,4 +79,6 @@ public class Shoot : MonoBehaviour
             }
         }
     }
+
+  
 }
