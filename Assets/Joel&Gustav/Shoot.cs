@@ -9,6 +9,7 @@ public class Shoot : MonoBehaviour
 
     public Vector2 minPower;
     public Vector2 maxPower;
+    public float counter = 0;
 
     Trajector traj;
 
@@ -46,6 +47,8 @@ public class Shoot : MonoBehaviour
             force = new Vector2(Mathf.Clamp(startPoint.x - endPoint.x, minPower.x, maxPower.x), Mathf.Clamp(startPoint.y - endPoint.y, minPower.y, maxPower.y));
             rb.AddForce(force * power, ForceMode2D.Impulse);
             traj.EndLine();
+            counter += 1;
+            Debug.Log(counter);
         }
     }
 
