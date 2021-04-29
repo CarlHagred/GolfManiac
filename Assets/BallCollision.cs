@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class BallCollision : MonoBehaviour
 {
-    void OnCollisionEnter(Collision collisionInfo)
+    void OnCollisionEnter2D(Collision2D collisionInfo)
     {
-        Debug.Log("yoloi");
         if (collisionInfo.collider.tag == "Water")
         {
+            FindObjectOfType<GameManager>().EndGame();
+        }
+        if (collisionInfo.collider.tag == "Hole")
+        {
+            Debug.Log("You wind");
             FindObjectOfType<GameManager>().EndGame();
         }
     }
