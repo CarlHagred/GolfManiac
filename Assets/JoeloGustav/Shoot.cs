@@ -44,12 +44,15 @@ public class Shoot : MonoBehaviour
             FindObjectOfType<GameManager>().EndGame();
             counter += 2;
         }
-    
+
 
         if (myTransform.position != lastPosition)
+        {
             isMoving = true;
-        else
+        }
+        else { 
             isMoving = false;
+        }
 
         lastPosition = myTransform.position;
 
