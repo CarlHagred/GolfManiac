@@ -14,6 +14,7 @@ public class BallCollision : MonoBehaviour
         {
             Debug.Log("You wind");
             FindObjectOfType<GameManager>().EndGame();
+            // Här ska vi ändra till next hole.
         }
     }
 }

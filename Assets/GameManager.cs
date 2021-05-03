@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+
 public class GameManager : MonoBehaviour
 {
 
     bool gameHasEnded = false;
     public float restartDelay = 1f;
     public GameObject completeLevelUI;
+    public Shoot ball;
 
     public void CompleteLevel()
     {
@@ -19,6 +22,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("SES");
             Invoke("Restart", restartDelay);
             // Restart game
+          //  ball.counter += 3;
 
         }
     }

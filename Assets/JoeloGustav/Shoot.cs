@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Shoot : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class Shoot : MonoBehaviour
     Vector3 lastPosition;
     Transform myTransform;
     bool isMoving;
+    bool gameHasEnded = false;
+    public float restartDelay = 1f;
+    public GameObject completeLevelUI;
+
 
     private void Start()
     {
@@ -79,6 +84,8 @@ public class Shoot : MonoBehaviour
             }
         }
     }
-
   
+
+   
+
 }
