@@ -19,12 +19,10 @@ public class Shoot : MonoBehaviour
     Vector3 startPoint;
     Vector3 endPoint;
 
-    Vector3 lastPosition;
+   public  Vector3 lastPosition;
     Transform myTransform;
     bool isMoving;
-    bool gameHasEnded = false;
-    public float restartDelay = 1f;
-    public GameObject completeLevelUI;
+   
 
 
     private void Start()
@@ -42,7 +40,7 @@ public class Shoot : MonoBehaviour
         if (rb.position.y < -7f)
         {
             FindObjectOfType<GameManager>().EndGame();
-            counter += 2;
+       
         }
     
 
@@ -59,7 +57,7 @@ public class Shoot : MonoBehaviour
             {
                 startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
                 startPoint.z = 15;
-                Debug.Log(startPoint);
+               
             }
             if (Input.GetMouseButton(0))
             {
@@ -81,6 +79,7 @@ public class Shoot : MonoBehaviour
                 traj.EndLine();
                 counter += 1;
                 Debug.Log(counter);
+                Debug.Log(lastPosition);
             }
         }
     }
