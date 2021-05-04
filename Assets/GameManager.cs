@@ -9,7 +9,13 @@ public class GameManager : MonoBehaviour
     public float restartDelay = 1f;
     public GameObject completeLevelUI;
     public Shoot ball;
+     public Transform spawnpoint;
 
+   /* void Start()
+    {
+        spawnpoint = spawnpoint.transform;
+    }
+   */
     public void CompleteLevel()
     {
         completeLevelUI.SetActive(true);
@@ -20,14 +26,26 @@ public class GameManager : MonoBehaviour
         {
             gameHasEnded = true;
             Debug.Log("SES");
-            Invoke("Restart", restartDelay);
+            Invoke("Respawna", restartDelay);
             // Restart game
           //  ball.counter += 3;
 
         }
     }
-    void Restart()
+    public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+       
+     //   SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
+    }
+    public void Respawna()
+    {
+        
+            ball.transform.position = spawnpoint.position;
+            ball.counter = ball.counter += 2;
+
+        gameHasEnded = false;
+        
     }
 }
