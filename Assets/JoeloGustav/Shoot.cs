@@ -37,7 +37,7 @@ public class Shoot : MonoBehaviour
 
     private void Update()
     {
-        if (rb.position.y < -7f)
+        if (rb.position.y < -19f)
         {
             FindObjectOfType<GameManager>().EndGame();
        
