@@ -21,7 +21,11 @@ EditorUserSettings:
       value: 22424703114646770818092e036c731500121479623d28393930
       flags: 0
     RecentlyUsedScenePath-5:
+<<<<<<< HEAD
       value: 224247031146466b0416092e5001560212583c2f212768252320092a
+=======
+      value: 22424703114646770818092e036c7211040311243f04232628255326ece92021
+>>>>>>> MartinLevel1
       flags: 0
   m_VCAutomaticAdd: 1
   m_VCDebugCom: 0
