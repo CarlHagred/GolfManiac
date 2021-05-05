@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
    */
    public void NextLevel()
     {
+        //completeLevelUI.SetActive(false);
         Invoke("CompleteLevel", restartDelay);
     }
 

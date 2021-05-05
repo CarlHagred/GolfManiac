@@ -35,11 +35,12 @@ public class Shoot : MonoBehaviour
         isMoving = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (rb.position.y < -7f)
         {
             FindObjectOfType<GameManager>().EndGame();
+
        
         }
 
@@ -54,7 +55,7 @@ public class Shoot : MonoBehaviour
         }
         lastPosition = myTransform.position;
 
-        if (!isMoving)
+        if (isMoving != true)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -66,6 +67,7 @@ public class Shoot : MonoBehaviour
             {
                 Vector3 currentPoint = cam.ScreenToWorldPoint(Input.mousePosition);
                 currentPoint.z = 15;
+
                 traj.RenderLine(startPoint, currentPoint);
 
             }
