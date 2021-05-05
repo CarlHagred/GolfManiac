@@ -15,7 +15,7 @@ public class BallCollision : MonoBehaviour
         if (collisionInfo.collider.tag == "Hole")
         {
             Debug.Log("You wind");
-            FindObjectOfType<GameManager>().EndGame();
+            FindObjectOfType<GameManager>().NextLevelLoad();
            
             // Här ska vi ändra till next hole.
         }

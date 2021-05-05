@@ -930,6 +930,7 @@ GameObject:
   - component: {fileID: 1364116361}
   - component: {fileID: 1364116363}
   - component: {fileID: 1364116362}
+  - component: {fileID: 1364116364}
   m_Layer: 0
   m_Name: flag_2
   m_TagString: Hole
@@ -1049,6 +1050,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1364116364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364116359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bdc8830419c049e490fe0e7aa2820a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1713807476}
 --- !u!1 &1591039930
 GameObject:
   m_ObjectHideFlags: 0
@@ -2866,7 +2880,7 @@ GameObject:
   - component: {fileID: 1713807477}
   - component: {fileID: 1713807476}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3766,7 +3780,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897390236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.1, y: 9.7, z: 0}
+  m_LocalPosition: {x: 50.6, y: -2.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

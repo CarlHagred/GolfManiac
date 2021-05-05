@@ -16,9 +16,16 @@ public class GameManager : MonoBehaviour
         spawnpoint = spawnpoint.transform;
     }
    */
+
+    public void NextLevelLoad()
+    {
+        Invoke("CompleteLevel", restartDelay);
+    }
     public void CompleteLevel()
     {
-        completeLevelUI.SetActive(true);
+        Debug.Log("LEvel wom");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+      //  completeLevelUI.SetActive(true);
     }
     public void EndGame()
     {
