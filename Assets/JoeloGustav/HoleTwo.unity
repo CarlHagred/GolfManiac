@@ -597,6 +597,9 @@ MonoBehaviour:
   rb: {fileID: 826216574}
   minPower: {x: -8, y: -8}
   maxPower: {x: 8, y: 8}
+  counter: 0
+  lastPosition: {x: 0, y: 0, z: 0}
+  showLimit: {fileID: 0}
 --- !u!114 &826216579
 MonoBehaviour:
   m_ObjectHideFlags: 0
