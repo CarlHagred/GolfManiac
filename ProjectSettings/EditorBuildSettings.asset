@@ -18,9 +18,12 @@ EditorBuildSettings:
     path: Assets/Levels/LevelJoel.unity
     guid: 935f99e98633540e185fef7a0258d8f4
   - enabled: 1
+    path: Assets/Levels/snyggastvackrastlvl.unity
+    guid: e19c235bc8eb944439f9d5bc80a17fcc
+  - enabled: 1
     path: Assets/Levels/Slutscen.unity
     guid: 6213f9d7d9fe548f6bc7dd97092d9535
   - enabled: 0
-    path: "Assets/Levels/N\xE4sta.unity"
-    guid: 3d1d4062ea2c84f33bebb11aa79af8d4
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

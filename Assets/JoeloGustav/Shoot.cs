@@ -75,7 +75,7 @@ public class Shoot : MonoBehaviour
             }
             if (Input.GetMouseButtonUp(0))
             {
-                FindObjectOfType<AudioManager>().Play("Swing");
+              //  FindObjectOfType<AudioManager>().Play("Swing");
                 endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
                 endPoint.z = 15;
 
@@ -89,12 +89,12 @@ public class Shoot : MonoBehaviour
                 Debug.Log(counter);
                 Debug.Log(lastPosition);
             }
-            if (counter >= 3.1)
+          /*  if (counter >= 3.1)
             {
                 showLimit.OverTheLimit();
                 Debug.Log("För mång slag");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
+            }*/
         }
 
     }
