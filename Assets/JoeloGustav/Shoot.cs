@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class Shoot : MonoBehaviour
 {
     public float power = 10f;
@@ -22,6 +23,7 @@ public class Shoot : MonoBehaviour
    public  Vector3 lastPosition;
     Transform myTransform;
     bool isMoving;
+    public ShowLimitCanvas showLimit;
    
 
 
@@ -35,13 +37,13 @@ public class Shoot : MonoBehaviour
         isMoving = false;
     }
 
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         if (rb.position.y < -7f)
         {
             FindObjectOfType<GameManager>().EndGame();
 
-       
+  
         }
 
 
@@ -68,7 +70,7 @@ public class Shoot : MonoBehaviour
                 Vector3 currentPoint = cam.ScreenToWorldPoint(Input.mousePosition);
                 currentPoint.z = 15;
 
-                traj.RenderLine(startPoint, currentPoint);
+                traj.RenderLine(myTransform.position, currentPoint);
 
             }
             if (Input.GetMouseButtonUp(0))
@@ -78,7 +80,7 @@ public class Shoot : MonoBehaviour
 
 
 
-                force = new Vector2(Mathf.Clamp(startPoint.x - endPoint.x, minPower.x, maxPower.x), Mathf.Clamp(startPoint.y - endPoint.y, minPower.y, maxPower.y));
+                force = new Vector2(Mathf.Clamp(myTransform.position.x - endPoint.x, minPower.x, maxPower.x), Mathf.Clamp(myTransform.position.y - endPoint.y, minPower.y, maxPower.y));
                 rb.AddForce(force * power, ForceMode2D.Impulse);
                 //Camera.main.gameObject.transform.Translate(startPoint.x - endPoint.x, 1, 1);
                 traj.EndLine();
@@ -86,7 +88,14 @@ public class Shoot : MonoBehaviour
                 Debug.Log(counter);
                 Debug.Log(lastPosition);
             }
+            if (counter >= 3.1)
+            {
+                showLimit.OverTheLimit();
+                Debug.Log("För mång slag");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
+
     }
   
 

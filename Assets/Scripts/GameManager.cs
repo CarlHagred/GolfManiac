@@ -36,15 +36,21 @@ public class GameManager : MonoBehaviour
             Debug.Log("SES");
             Invoke("Respawna", restartDelay);
             // Restart game
-          //  ball.counter += 3;
+            //  ball.counter += 3;
+        
 
         }
     }
     public void Restart()
     {
 
+        if(ball.counter > 2)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
        
-     //   SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+       // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         
     }
     public void Respawna()
@@ -52,6 +58,7 @@ public class GameManager : MonoBehaviour
         
             ball.transform.position = spawnpoint.position;
             ball.counter = ball.counter += 2;
+       // ball.rb.AddForce(null);
 
         gameHasEnded = false;
         
