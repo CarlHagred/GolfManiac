@@ -73,6 +73,7 @@ public class Shoot : MonoBehaviour
             }
             if (Input.GetMouseButtonUp(0))
             {
+                FindObjectOfType<AudioManager>().Play("Swing");
                 endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
                 endPoint.z = 15;
 
