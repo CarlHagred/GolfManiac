@@ -37,7 +37,7 @@ public class Shoot : MonoBehaviour
         isMoving = false;
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
         if (rb.position.y < -7f)
         {
@@ -46,29 +46,17 @@ public class Shoot : MonoBehaviour
   
         }
 
-
-        if (myTransform.position != lastPosition)
-        {
-            isMoving = true;
-        }
-        else
-        {
-            isMoving = false;
-        }
-        lastPosition = myTransform.position;
-
-        if (isMoving != true)
+        if (rb.velocity.magnitude <= 0.01)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
-                startPoint.z = 15;
-               
+                startPoint.z = -1;
             }
             if (Input.GetMouseButton(0))
             {
                 Vector3 currentPoint = cam.ScreenToWorldPoint(Input.mousePosition);
-                currentPoint.z = 15;
+                currentPoint.z = -1;
 
                 traj.RenderLine(myTransform.position, currentPoint);
 
@@ -89,17 +77,6 @@ public class Shoot : MonoBehaviour
                 Debug.Log(counter);
                 Debug.Log(lastPosition);
             }
-          /*  if (counter >= 3.1)
-            {
-                showLimit.OverTheLimit();
-                Debug.Log("För mång slag");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }*/
         }
-
     }
-  
-
-   
-
 }
