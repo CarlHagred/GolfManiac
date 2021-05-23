@@ -12,16 +12,16 @@ EditorBuildSettings:
     path: Assets/Levels/Menu.unity
     guid: 04e208cbd2dc845a5b3d8a3bc27f2e65
   - enabled: 1
-    path: Assets/Levels/Level3.unity
+    path: Assets/Levels/Level1.unity
     guid: edb5fdb52124a472a81aaf5d3d2f10ee
   - enabled: 1
-    path: Assets/Levels/LevelJoel.unity
+    path: Assets/Levels/Level2.unity
     guid: 935f99e98633540e185fef7a0258d8f4
   - enabled: 1
-    path: Assets/Levels/snyggastvackrastlvl.unity
+    path: Assets/Levels/Level3.unity
     guid: e19c235bc8eb944439f9d5bc80a17fcc
   - enabled: 1
-    path: Assets/Levels/MartinsInsaneLevel_Vansinne.unity
+    path: Assets/Levels/Level4.unity
     guid: 9cd541d29944e7a4aa7060d890eaa562
   - enabled: 1
     path: Assets/Levels/Slutscen.unity
